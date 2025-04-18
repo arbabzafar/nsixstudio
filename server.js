@@ -24,6 +24,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/contact-a
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Api working fine');
+});
 const contactRoutes = require('./routes/contact.routes');
 app.use('/api/contacts', contactRoutes);
 
