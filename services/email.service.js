@@ -38,6 +38,34 @@ async function sendContactEmail(contact) {
     }
 }
 
+// Function to send subscription confirmation email
+async function sendSubscriptionEmail(email) {
+    try {
+        // Render email template
+        const emailTemplate = await ejs.renderFile(
+            path.join(__dirname, '../templates/subscription-email.ejs'),
+            { email }
+        );
+
+        // Email options
+        const mailOptions = {
+            from: process.env.GMAIL_USER,
+            to: email,
+            subject: 'Welcome to Our Newsletter!',
+            html: emailTemplate
+        };
+
+        // Send email
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Subscription email sent successfully:', info.messageId);
+        return true;
+    } catch (error) {
+        console.error('Error sending subscription email:', error);
+        throw error;
+    }
+}
+
 module.exports = {
-    sendContactEmail
+    sendContactEmail,
+    sendSubscriptionEmail
 }; 

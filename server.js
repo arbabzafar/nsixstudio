@@ -27,8 +27,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/contact-a
 app.get('/', (req, res) => {
   res.send('Api working fine');
 });
+
 const contactRoutes = require('./routes/contact.routes');
+const subscriptionRoutes = require('./routes/subscription.routes');
+
 app.use('/api/contacts', contactRoutes);
+app.use('/api/subscribe', subscriptionRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

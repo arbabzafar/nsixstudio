@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f0;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(255, 161, 29, 0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #ffa11d 0%, #ff8c00 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #805515;
+            font-size: 14px;
+            background-color: #fff9f0;
+            border-top: 1px solid #ffe4bc;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <h1>🎉 Welcome to Our Newsletter!</h1>
+            </div>
+            <div class="content">
+                <h2>Thank you for subscribing!</h2>
+                <p>We're excited to have you join our community. You'll now receive our latest updates and news directly to your inbox.</p>
+                <p>Your email: <strong><%= email %></strong></p>
+            </div>
+            <div class="footer">
+                <p>© <%= new Date().getFullYear() %> Your Company Name. All rights reserved.</p>
+                <small>You can unsubscribe at any time by clicking the unsubscribe link in our emails.</small>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
